@@ -1,0 +1,18 @@
+FONCTION VALMAX(E v1 : réel, E v2 : réel)
+DEBUT
+	SI v1>v2 ALORS
+		RETOURNER v1
+	SINON
+		RETOURNER v2
+	FINSI
+FIN
+
+PROGRAMMEPRINCIPAL
+VAR	val1 : réel
+	val2 : réel
+DEBUT
+	AFFICHER "Ce programme renvoie la valeur maximale entre deux valeurs saisies"
+	AFFICHER "Saisissez 2 réels"
+	SAISIR val1,val2
+	AFFICHER "La plus grande valeur est : " VALMAX(val1,val2)
+FIN

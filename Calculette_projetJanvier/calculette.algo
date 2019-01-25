@@ -1,0 +1,182 @@
+/* -----------------------------------------------------------*/
+/* CALCULETTE.ALGO - 11/01/2019 - SIO1 */
+/* GROUPE : Florian & Antoine */
+/* -----------------------------------------------------------*/
+
+/* -----------------------------------------------------------*/
+/* input */
+PROCEDURE input_uint_mv(E str_lbl : chaîne de caractères,E/S val : entier,E valmax : entier,E str_err : chaîne de caractères)
+VAR valid : booléen
+DEBUT
+	REPETER
+		AFFICHER str_lbl
+		valid ← val>-1 ET val<valmax+1
+		SI NON valid ALORS
+			AFFICHER str_err
+		FINSI
+	JUSQU'A valid
+FIN
+
+PROCEDURE input_choice(E/S choice : entier,E nb_elem : entier)
+VAR valid : booléen
+DEBUT
+	REPETER
+		AFFICHER "Choix: "
+		SAISIR choice
+		valid ← choice>-1 ET choice<nb_elem
+		SI NON valid ALORS
+			AFFICHER "Ce choix est invalide"
+		FINSI
+	JUSQU'A valid
+FIN
+/* -----------------------------------------------------------*/
+/* calc */
+FONCTION calc_add(f1 : réel,f2 : réel) : réel
+DEBUT
+	RETOURNER f1+f2
+FIN
+
+FONCTION calc_sub(f1 : réel,f2 : réel) : réel
+DEBUT
+	RETOURNER f1-f2
+FIN
+
+FONCTION calc_mult(f1 : réel,f2 : réel) : réel
+DEBUT
+	RETOURNER f1*f2
+FIN
+
+FONCTION calc_div(f1 : réel,f2 : réel) : réel
+VAR res : réel
+DEBUT
+	SI f2<>0 ALORS
+		res ← f1/f2
+	SINON
+		res ← 0
+	FINSI
+	RETOURNER res
+FIN
+
+// Cette fonction est implémentée, mais non utilisée dans le code
+FONCTION calc_abs(f1 : réel,f2 : réel) : réel
+VAR res : réel
+DEBUT
+	SI f1>f2 ALORS
+		res ← f1-f2
+	SINON
+		res ← f2-f1
+	FINSI
+	RETOURNER res
+FIN
+
+PROCEDURE calc(sel : entier)
+VAR	nb1 : réel
+	nb2 : réel
+	res : réel
+	symbol : caractère
+DEBUT
+	SELON CAS sel FAIRE
+		1 : AFFICHER "Addition"
+		2 : AFFICHER "Soustraction"
+		3 : AFFICHER "Multiplication"
+		4 : AFFICHER "Division"
+	FINSELON
+	AFFICHER "Entrez un premier nombre: "
+	SAISIR nb1
+	AFFICHER "Entrez un deuxième nombre: "
+	SAISIR nb2
+	SELON CAS sel FAIRE
+		1 :	symbol ← '+'
+			res ← calc_add(nb1,nb2)
+		2 :	symbol ← '-'
+			res ← calc_sub(nb1,nb2)
+		3 :	symbol ← '*'
+			res ← calc_mult(nb1,nb2)
+		4 :	symbol ← '/'
+			res ← calc_div(nb1,nb2)
+	FINSELON
+	SI sel=4 ET nb2=0 ALORS
+		AFFICHER "Erreur : Division par 0!"
+	SINON
+		AFFICHER "Résultats"
+		AFFICHER nb1,symbol,nb2,"=",res
+	FINSI
+FIN
+/* -----------------------------------------------------------*/
+/* conv */
+FONCTION conv_hms2sec(E h : entier,E m : entier,E s : entier)
+DEBUT
+	RETOURNER h*3600+m*60+s
+FIN
+
+PROCEDURE conv_sec2hms(E/S h : entier,E/S m : entier,E/S s : entier)
+VAR buff : entier
+DEBUT
+	h ← s/3600
+	buff ← h*3600
+	m ← (s-buff)/60
+	s ← s-buff-m*60
+FIN
+
+PROCEDURE conv(sel : entier)
+VAR	hours : entier
+	minutes : entier
+	seconds : entier
+DEBUT
+	SELON CAS sel FAIRE
+		1 :	AFFICHER "Pour rappel : Un horaire est de la forme HHMMSS"
+			AFFICHER "Ainsi, il est interdit d'entrer des valeurs négatives ou supérieures à 59 pour les secondes et minutes ou à 23 pour les heures!"
+			input_uint_mv("Nombre d'heures : ",hours,23,"Le nombre d'heures est invalide!")
+			input_uint_mv("Nombre de minutes : ",minutes,59,"Le nombre de minutes est invalide!")
+			input_uint_mv("Nombre de secondes : ",seconds,59,"Le nombre de secondes est invalide!")
+			AFFICHER "Valeur en Secondes : ",conv_hms2sec(hours,minutes,seconds),"s"
+		2 : AFFICHER "Attention : le nombre de secondes ne peut être supérieur à 86399, sinon il ne s'agit pas d'un horaire"
+			input_uint_mv("Valeur en Secondes : ",seconds,86399,"Le nombre de secondes spécifié ne peut être converti en horaire!")
+			conv_sec2hms(hours,minutes,seconds)
+			AFFICHER "Valeur Horaire : ",hours,"h",minutes,"m",seconds,"s"
+	FINSELON
+FIN
+/* -----------------------------------------------------------*/
+/* main */
+PROGRAMMEPRINCIPAL
+VAR	choice : entier
+	stay : booléen
+	quit_sm : booléen
+DEBUT
+	stay ← vrai
+	TANTQUE vrai FAIRE
+		AFFICHER "Menu Principal"
+		AFFICHER "1. Calculette"
+		AFFICHER "2. Convertisseur"
+		AFFICHER "0. Quitter"
+		input_choice(choice,3)
+		SELON CAS choice FAIRE
+			0 : stay ← faux
+			1 :	REPETER
+					AFFICHER "Menu Calculette"
+					AFFICHER "1. Addition"
+					AFFICHER "2. Soustraction"
+					AFFICHER "3. Multiplication"
+					AFFICHER "4. Division"
+					AFFICHER "0. Retour au menu principal"
+					input_choice(choice,5)
+					quit_sm ← choice=0
+					SI NON quit_sm ALORS
+						calc(choice)
+					FINSI
+				JUSQU'A quit_sm
+			2 :	REPETER
+					AFFICHER "Menu Convertisseur"
+					AFFICHER "1. Conversion Horaire (HHMMSS) en durée (en s)"
+					AFFICHER "2. Conversion durée (en s) en Horaire (HHMMSS)"
+					AFFICHER "0. Retour au menu principal"
+					input_choice(choice,3)
+					quit_sm ← choice=0
+					SI NON quit_sm ALORS
+						conv(choice)
+					FINSI
+				JUSQU'A quit_sm
+		FINSELON
+	FINTANTQUE
+FIN
+/* -----------------------------------------------------------*/

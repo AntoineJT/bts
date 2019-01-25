@@ -1,0 +1,25 @@
+PROGRAMME CHOIX_NOTES_MAX_MOY
+
+CONST	classe[0..19,0..4]={{10,15,20,4,2},{4,7,2,1.5,19.75},(...)} // (...) car c'est long et inutile de tout définir
+
+VAR		eleve	:	entier
+		i 		:	entier
+		somme	:	réel
+		notemax	:	réel
+
+DEBUT
+	somme ← 0
+	notemax ← 0
+	AFFICHER "Ce programme affiche les 5 notes d'un étudiant choisi par l'utilisateur, sa meilleure note et sa moyenne"
+	AFFICHER "Eleve n° (de 1 à 20) "
+	SAISIR eleve
+	POUR i ALLANT DE 0 à 4 FAIRE
+		AFFICHER "Note n°" i+1 " = " classe[eleve-1,i]
+		somme ← somme+classe[eleve-1,i]
+		SI classe[eleve-1,i]>notemax ALORS
+			notemax ← classe[eleve-1,i]
+		FINSI
+	FINPOUR
+	AFFICHER "Meilleure note : " notemax
+	AFFICHER "Moyenne : " somme/5
+FIN

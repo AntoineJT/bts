@@ -1,0 +1,17 @@
+PROGRAMME NbSupEg10
+
+CONST tab[0..9] = {5,7,8,65,12,74,65,95,10,25}
+
+VAR	i		:	entier
+	nbOcc	:	entier
+
+DEBUT
+	AFFICHER "Saisissez 10 nombres"
+	n ← 0
+	POUR i ALLANT DE 0 À 9 FAIRE
+		SI tab[i]>=10 ALORS
+			n ← n+1
+		FINSI
+	FINPOUR
+	AFFICHER "Il y a " n " nombres supérieurs ou égal à 10"
+FIN

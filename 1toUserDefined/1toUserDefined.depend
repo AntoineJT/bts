@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1539686124 source:d:\codeblocksprog_sio1\1touserdefined\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<inttypes.h>
+

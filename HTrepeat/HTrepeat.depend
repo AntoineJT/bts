@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1541761366 source:d:\codeblocksprog_sio1\htwhile\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1542057276 source:e:\codeblocksprog_sio1\htrepeat\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+

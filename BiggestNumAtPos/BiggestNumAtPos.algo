@@ -1,0 +1,24 @@
+PROGRAMME BiggestNumAtPos
+
+VAR	tab[0..9] 	:	tableau d'entiers
+	i			:	entier
+	n			:	entier
+	val			:	entier
+	
+DÉBUT
+	AFFICHER "Ce programme cherche la valeur maximale contenue dans un tableau et son indice"
+	AFFICHER "Saisissez 10 nombres"
+	POUR i ALLANT DE 0 À 9 FAIRE
+		AFFICHER "Nombre n°" i+1
+		SAISIR tab[i]
+	FINPOUR
+	val ← tab[0]
+	n ← 0
+	POUR i ALLANT DE 0 À 9 FAIRE
+		SI tab[i]>val ALORS
+			n ← i
+			val ← tab[i]
+		FINSI
+	FINPOUR
+	AFFICHER "Le maximum est : " val " à la position : " n
+FIN

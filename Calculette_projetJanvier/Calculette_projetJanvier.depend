@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1547150984 source:e:\codeblocksprog_sio1\calculette_projetjanvier\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"boolean.h"
+	"calc.h"
+	"conv.h"
+	"input.h"
+
+1546855636 e:\codeblocksprog_sio1\calculette_projetjanvier\boolean.h
+
+1547154614 source:e:\codeblocksprog_sio1\calculette_projetjanvier\calc.c
+	<stdio.h>
+	"boolean.h"
+	"calc.h"
+	"input.h"
+
+1547164148 e:\codeblocksprog_sio1\calculette_projetjanvier\calc.h
+
+1546857850 source:d:\codeblocksprog_sio1\calculette_projetjanvier\calc.c
+	"calc.h"
+
+1546857862 d:\codeblocksprog_sio1\calculette_projetjanvier\calc.h
+
+1546859104 source:d:\codeblocksprog_sio1\calculette_projetjanvier\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	"boolean.h"
+	"calc.h"
+
+1546855636 d:\codeblocksprog_sio1\calculette_projetjanvier\boolean.h
+
+1546857850 source:f:\codeblocksprog_sio1\calculette_projetjanvier\calc.c
+	"calc.h"
+
+1546857862 f:\codeblocksprog_sio1\calculette_projetjanvier\calc.h
+
+1547151180 e:\codeblocksprog_sio1\calculette_projetjanvier\conv.h
+
+1547065362 e:\codeblocksprog_sio1\calculette_projetjanvier\input.h
+
+1547065372 source:e:\codeblocksprog_sio1\calculette_projetjanvier\input.c
+	<stdio.h>
+	"boolean.h"
+	"input.h"
+
+1547163668 source:e:\codeblocksprog_sio1\calculette_projetjanvier\conv.c
+	<stdio.h>
+	<stdlib.h>
+	"boolean.h"
+	"conv.h"
+	"input.h"
+

@@ -1,0 +1,21 @@
+PROGRAMME HTwhile
+VAR	price : réel
+	qt : entier
+	tot : réel
+	rep : caractère
+	num : entier
+DEBUT
+	AFFICHER "Programme qui affiche un Total TTC"
+	rep ← 'v'
+	num ← 1
+	tot ← 0
+	TANTQUE rep<>'f' FAIRE
+		AFFICHER "Entrez le prix HT du produit n°" num "puis la quantité de produits"
+		SAISIR price,qt
+		tot ← tot+price*qt
+		num ← num+1
+		AFFICHER "Autre produit ? (f pour fin) "
+		SAISIR rep
+	FINTANTQUE
+	AFFICHER "Total TTC : " tot*1.2
+FIN

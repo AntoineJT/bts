@@ -1,0 +1,17 @@
+PROGRAMME ReverseName20
+
+VAR	name	:	chaîne de 20 caractères
+	rname	:	chaîne de 20 caractères
+	i		:	entier
+	
+
+DEBUT
+	AFFICHER "Ce programme affiche votre prénom (max. 20 caractères) à l'envers"
+	AFFICHER "Entrez votre prénom (max. 20 caractères) : "
+	SAISIR name
+	POUR i ALLANT DE 0 A 19 FAIRE
+		rname[i] ← name[19-i]
+	FINPOUR
+	AFFICHER "Prénom à l'endroit : " name
+	AFFICHER "Prénom à l'envers : " rname
+FIN

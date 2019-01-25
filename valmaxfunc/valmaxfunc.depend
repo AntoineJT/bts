@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1544772822 source:e:\codeblocksprog_sio1\valmaxfunc\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+

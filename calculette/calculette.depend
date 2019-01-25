@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1538477056 source:d:\codeblocksprog_sio1\calculette\main.c
+	<stdio.h>
+	<stdlib.h>
+

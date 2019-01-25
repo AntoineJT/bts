@@ -1,0 +1,33 @@
+
+TYPE TGrille = Tableau[1..49] de booléens
+TYPE TListe = Tableau[1..10] de entiers
+
+PROCEDURE Afficher(E UneGrille : TGrille)
+VAR i, nbcases : entier
+DEBUT
+	nbcases ← 0
+	POUR i ALLANT DE 0 A 49 FAIRE
+		SI UneGrille[i] ALORS
+			AFFICHER "Case cochée à l'indice " indice
+			nbcases ← nbcases+1
+		FINSI
+	FINPOUR
+	AFFICHER "Le nombre de cases cochées est " nbcases
+FIN
+
+PROCEDURE Remplir(E UneGrille : TGrille, E/S MaListe : TListe, E/S NbCoche : entier)
+VAR i : entier
+DEBUT
+	POUR i ALLANT DE 0 A 49 FAIRE
+		SI UneGrille[i] ALORS
+			MaListe[NbCoche] ← i
+			NbCoche ← NbCoche+1
+		FINSI
+	FINPOUR
+FIN
+
+PROGRAMMEPRINCIPAL
+//VAR UneGrille : TGrille
+DEBUT
+	
+FIN

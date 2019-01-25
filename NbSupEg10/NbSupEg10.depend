@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1543563560 source:e:\codeblocksprog_sio1\nbsupeg10\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+

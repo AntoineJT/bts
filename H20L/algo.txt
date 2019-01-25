@@ -1,0 +1,14 @@
+Algo H2OL
+Const 
+	NPACK = 5
+	NPAL = 45
+Var 
+	price : réel
+Début
+	Afficher "Ce programme calcule le prix au litre d'une bouteille d'eau, le prix d'un pack et le prix d'une palette de packs"
+	Afficher "Prix d'une bouteille de 1.5L ? "
+	Saisir price
+	Afficher "Prix au L = ",price/1.5
+	Afficher "Prix pack = ",NPACK*price
+	Afficher "Prix palette = ",NPAL*price
+Fin

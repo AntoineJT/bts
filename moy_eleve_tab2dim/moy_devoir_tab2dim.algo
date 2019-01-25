@@ -1,0 +1,18 @@
+PROGRAMME MOYENNE_DEVOIR_TAB2DIM
+
+CONST	classe[0..19,0..4]={{10,15,20,4,2},{4,7,2,1.5,19.75},(...)} // (...) car c'est long et inutile de tout définir
+
+VAR		i			:	entier
+		j			:	entier
+		somme		:	réel
+
+DEBUT
+	AFFICHER "Ce programme calcule la moyenne de chaque devoir en fonction des notes des élèves de la classe (20 élèves)"
+	POUR i ALLANT DE 0 à 4 FAIRE // 4 car 5 devoirs
+		somme ← 0
+		POUR j ALLANT DE 0 à 19 FAIRE // 19 car 20 élèves
+			somme ← somme+classe[j,i]
+		FINPOUR
+		AFFICHER "Moyenne des élèves au devoir n°" i+1 " = " somme/20
+	FINPOUR
+FIN

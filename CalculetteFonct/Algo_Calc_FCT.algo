@@ -1,0 +1,65 @@
+FONCTION calc_add(E n1:réel, E n2:réel ) : réel
+DEBUT
+	RETOURNER n1+n2
+FIN 
+
+FONCTION calc_sub(E n1:réel, E n2:réel ) : réel
+DEBUT
+	RETOURNER n1-n2
+FIN 
+
+FONCTION calc_abs(E n1:réel, E n2:réel ) : réel
+DEBUT
+	SI n1>n2 ALORS
+		res ← n1-n2
+	SINON
+		res ← n2-n1
+	FINSI
+	RETOURNER res
+FIN	
+
+FONCTION calc_mult(E n1:réel, E n2:réel ) : réel
+DEBUT
+	RETOURNER n1*n2
+FIN 
+
+FONCTION calc_div(E n1:réel, E n2:réel ) : réel
+DEBUT
+	RETOURNER n1/n2
+FIN 
+ 
+PROGRAMME Calculatrice
+VAR
+	n1, n2, res : réel
+	c : caractère
+	no_err : booléen
+DEBUT
+	AFFICHER "Ceci est une calculatrice en ligne de commande"
+	REPETER
+		AFFICHER "Entrez 2 nombres"
+		SAISIR n1, n2
+		AFFICHER "Tapez +, -, *, / ou | suivant le calcul que vous souhaitez effectuer."
+		SAISIR c
+		SELON c FAIRE
+			'+' : 	res ← calc_add(n1,n2)
+			'-' : 	res ← calc_sub(n1,n2)
+			'*' : 	res ← calc_mult(n1,n2)
+			'/' : 	SI n2<>0 ALORS
+						res ← calc_div(n1, n2)
+					SINON
+						AFFICHER "Erreur : Division par 0 !"
+						no_err ← faux
+					FINSI
+			'|' : 	res ← calc_abs(n1,n2)
+			AUTREMENT : AFFICHER "Erreur ! L’opération demandée n’existe pas !"
+						no_err ← faux
+		FINSELON
+		SI no_err ALORS
+			AFFICHER n1, c, n2, " = ", res
+		FINSI
+		REPETER
+			AFFICHER " Voulez-vous recommencer ? [O/N] "
+			SAISIR c
+		JUSQU'A c='o' OU c='O' OU c='n' OU c='N'
+	JUSQU'A c='N' OU c='n'
+FIN

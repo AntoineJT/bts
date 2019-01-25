@@ -1,0 +1,29 @@
+PROGRAMME OccurInTab
+
+CONST 	tab[0..19]={1,2,3,4,5,7,8,9,5,4,1,2,5,50,50,50,48,96,75,50}
+
+VAR		ind[0..19]	: 	tableau de réels
+		i 			: 	entier
+		search 		: 	entier
+		occ			: 	entier
+		
+DEBUT
+	AFFICHER "Le programme compte le nombre d'occurences dans un tableau"
+	SAISIR search
+	occ ← 0
+	POUR i ALLANT DE 0 A 19 FAIRE
+		SI tab[i]=search ALORS
+			ind[occ] ← i
+			occ ← occ+1
+		FINSI
+	FINPOUR
+	AFFICHER "Nombre d'occurences de " search " = " occ
+	AFFICHER "Indice des occurences : "
+	SI occ>0 ALORS	
+		POUR i ALLANT DE 0 à occ-1 FAIRE
+			AFFICHER ind[i]
+		FINPOUR
+	SINON
+		AFFICHER "N/A"
+	FINSI
+FIN

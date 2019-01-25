@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1539937946 source:d:\codeblocksprog_sio1\pairimpair\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+

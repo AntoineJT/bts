@@ -1,0 +1,20 @@
+tableChoix
+
+VAR	nb : entier
+	cnt : entier
+	choice : caractère
+DEBUT
+	AFFICHER "Ce programme permet d'afficher la table de multiplication du nombre de votre choix"
+	REPETER
+		AFFICHER "Table de multiplication de : "
+		SAISIR nb
+		AFFICHER "Table de multiplication de " nb
+		POUR cnt DE 1 A 10 FAIRE
+			AFFICHER nb " x " cnt " = " nb*cnt
+		FINPOUR
+		REPETER
+			AFFICHER "Continuer ? (O/N) "
+			SAISIR choice
+		JUSQU'A choice='O' OU choice='o' OU choice='N' OU choice='n'
+	JUSQU'A choice<>'N' ET choice<>'n'
+FIN

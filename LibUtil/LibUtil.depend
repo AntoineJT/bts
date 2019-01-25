@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1544522870 source:e:\codeblocksprog_sio1\libutil\str_util.c
+	<string.h>
+	<stdlib.h>
+	<stdint.h>
+	"boolean.h"
+	"err.h"
+	"str_util.h"
+
+1544176408 e:\codeblocksprog_sio1\libutil\boolean.h
+
+1544644560 source:e:\codeblocksprog_sio1\libutil\test\maintest.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../err.h"
+	"../str_util.h"
+	"../boolean.h"
+	"../memalloc.h"
+	<windows.h>
+
+1544522530 e:\codeblocksprog_sio1\libutil\str_util.h
+	<stdint.h>
+	"boolean.h"
+	"err.h"
+
+1544522244 e:\codeblocksprog_sio1\libutil\catcherr.h
+	"boolean.h"
+
+1544522230 source:e:\codeblocksprog_sio1\libutil\catcherr.c
+	<stdio.h>
+	"boolean.h"
+	"catcherr.h"
+
+1544522658 source:e:\codeblocksprog_sio1\libutil\err.c
+	<stdio.h>
+	"boolean.h"
+	"err.h"
+
+1544522444 e:\codeblocksprog_sio1\libutil\err.h
+	"boolean.h"
+
+1544644428 source:e:\codeblocksprog_sio1\libutil\memalloc.c
+	<stdlib.h>
+	"boolean.h"
+
+1544644424 e:\codeblocksprog_sio1\libutil\memalloc.h
+	"boolean.h"
+
