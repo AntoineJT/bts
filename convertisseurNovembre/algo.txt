@@ -1,0 +1,275 @@
+VARS
+	stay : booléen
+	choice, sec, hour, minute : entiers
+	x : réel // Un réel qui permet de calculer des résultats
+
+ALGO ConvNov
+DEBUT
+	AFFICHER "Convertisseur (travail à faire pendant les vacances d'Octobre)"
+	AFFICHER "fait par le binôme : Antoine Tournepiche et Florian Mayeux-Gudiña"
+	stay ← vrai
+	TANT QUE stay FAIRE
+		AFFICHER "" // Retour à la ligne
+		AFFICHER "Sélectionnez une option"
+		AFFICHER "1: Conversion Celsius/Fahrenheit"
+		AFFICHER "2: Conversion Miles/Km"
+		AFFICHER "3: Conversion Litres/Gallons"
+		AFFICHER "4: Conversion Centimètres/Pouces"
+		AFFICHER "5: Conversion Horaire/Secondes"
+		AFFICHER "0: Sortir du programme"
+		AFFICHER "" // Retour à la ligne
+		AFFICHER "Choix : "
+		SAISIR choice
+		SELON CAS choice FAIRE
+			0 :	 stay ← faux
+			1 :	 TANT QUE choice<>0 FAIRE
+					AFFICHER ""
+					AFFICHER "Conversion Celsius/Fahrenheit"
+					AFFICHER ""
+					AFFICHER "1: Convertir Celsius en Fahrenheit"	
+					AFFICHER "2: Convertir Fahrenheit en Celsius"
+					AFFICHER "0: Retour au menu principal"
+					AFFICHER ""
+					AFFICHER "Choix : "
+					SAISIR choice
+					SELON CAS choice FAIRE
+						1:	AFFICHER ""
+							AFFICHER "Valeur en degrés Celsius : "
+							SAISIR x	// température
+							x ← x*1.8+32	// calcul de la valeur en Fahrenheit
+							AFFICHER "Valeur en degrés Fahrenheit : " x "°F"
+						2:	AFFICHER ""
+							AFFICHER "Valeur en degrés Fahrenheit : "
+							SAISIR x	// température
+							x ← (x-32)/1.8	// calcul de la valeur en Celsius
+							AFFICHER "Valeur en degrés Celsius : " x "°C"
+						AUTREMENT :	SI choice<>0 ALORS
+										AFFICHER "Cela n'est pas un choix valide !"
+									FINSI
+					FINSELON
+				FINTANTQUE
+			2 :	TANT QUE choice<>0 FAIRE
+					AFFICHER ""
+					AFFICHER "Conversion Miles/Kilomètres"
+					AFFICHER ""
+					AFFICHER "1: Convertir Miles en Kilomètres"	
+					AFFICHER "2: Convertir Kilomètres en Miles"
+					AFFICHER "0: Retour au menu principal"
+					AFFICHER ""
+					AFFICHER "Choix : "
+					SAISIR choice
+					SELON CAS choice FAIRE
+						1:	AFFICHER ""
+							REPETER
+								AFFICHER "Valeur en Miles : "
+								SAISIR x	// distance
+								SI x<=0 ALORS
+									AFFICHER "Une distance ne peut être négative!"
+								FINSI
+							JUSQU'A x>=0
+							x ← x*1.609344	// calcul de la valeur en Kilomètres
+							AFFICHER "Valeur en Kilomètres : " x "km"
+						2:	AFFICHER ""
+							REPETER
+								AFFICHER "Valeur en Kilomètres : "
+								SAISIR x	// distance
+								SI x<=0 ALORS
+									AFFICHER "Une distance ne peut être négative!"
+								FINSI
+							JUSQU'A x>=0
+							x ← x/1.609344	// calcul de la valeur en Miles
+							AFFICHER "Valeur en Miles : " x "mi"
+						AUTREMENT :	SI choice<>0 ALORS
+										AFFICHER "Cela n'est pas un choix valide !"
+									FINSI
+					FINSELON
+				FINTANTQUE
+			3 :	TANT QUE choice<>0 FAIRE
+					AFFICHER ""
+					AFFICHER "Conversion Litres/Gallons"
+					AFFICHER ""
+					AFFICHER "1: Convertir Litres en Gallons US"
+					AFFICHER "2: Convertir Litres en Gallons Impériaux"
+					AFFICHER "3: Convertir Gallons US en Litres"
+					AFFICHER "4: Convertir Gallons Impériaux en Litres"
+					AFFICHER "5: Convertir Gallons Impériaux en Gallons US"
+					AFFICHER "6: Convertir Gallons US en Gallons Impériaux"
+					AFFICHER "0: Retour au menu principal"
+					AFFICHER ""
+					AFFICHER "Choix : "
+					SAISIR choice
+					SELON CAS choice FAIRE
+						1:	AFFICHER ""
+							REPETER
+								AFFICHER "Valeur en Litres : "
+								SAISIR x	// volume
+								SI x<=0 ALORS
+									AFFICHER "Un volume ne peut être négatif!"
+								FINSI
+							JUSQU'A x>=0
+							x ← x/3.785411784	// calcul de la valeur en Gallons US
+							AFFICHER "Valeur en Gallons US : " x "gal US"
+						2:	AFFICHER ""
+							REPETER
+								AFFICHER "Valeur en Litres : "
+								SAISIR x	// volume
+								SI x<=0 ALORS
+									AFFICHER "Un volume ne peut être négatif!"
+								FINSI
+							JUSQU'A x>=0
+							x ← x/4.54609	// calcul de la valeur en Gallons Impériaux
+							AFFICHER "Valeur en Gallons Impériaux : " x "gal Imp"
+						3:	AFFICHER ""
+							REPETER
+								AFFICHER "Valeur en Gallons US : "
+								SAISIR x	// volume
+								SI x<=0 ALORS
+									AFFICHER "Un volume ne peut être négatif!"
+								FINSI
+							JUSQU'A x>=0
+							x ← x*3.785411784	// calcul de la valeur en Litres
+							AFFICHER "Valeur en Litres : " x "L"
+						4:	AFFICHER ""
+							REPETER
+								AFFICHER "Valeur en Gallons Impériaux: "
+								SAISIR x	// volume
+								SI x<=0 ALORS
+									AFFICHER "Un volume ne peut être négatif!"
+								FINSI
+							JUSQU'A x>=0
+							x ← x*4.54609		// calcul de la valeur en Litres
+							AFFICHER "Valeur en Litres : " x "L"
+						5:	AFFICHER ""
+							REPETER
+								AFFICHER "Valeur en Gallons Impériaux: "
+								SAISIR x	// volume
+								SI x<=0 ALORS
+									AFFICHER "Un volume ne peut être négatif!"
+								FINSI
+							JUSQU'A x>=0
+							x ← x*4.54609/3.785411784	// calcul de la valeur en Gallons US
+							AFFICHER "Valeur en Gallons US : " x "gal US"
+						6:	AFFICHER ""
+							REPETER
+								AFFICHER "Valeur en Gallons US : "
+								SAISIR x	// volume
+								SI x<=0 ALORS
+									AFFICHER "Un volume ne peut être négatif!"
+								FINSI
+							JUSQU'A x>=0
+							x ← x*3.785411784/4.54609	// calcul de la valeur en Gallons Impériaux
+							AFFICHER "Valeur en Gallons Impériaux : " x "gal Imp"
+						AUTREMENT :	SI choice<>0 ALORS
+										AFFICHER "Cela n'est pas un choix valide !"
+									FINSI
+					FINSELON
+				FINTANTQUE
+			4 :	 TANT QUE choice<>0 FAIRE
+					AFFICHER ""
+					AFFICHER "Conversion Centimètres/Pouces"
+					AFFICHER ""
+					AFFICHER "1: Convertir Centimètres en Pouces"	
+					AFFICHER "2: Convertir Pouces en Centimètres"
+					AFFICHER "0: Retour au menu principal"
+					AFFICHER ""
+					AFFICHER "Choix : "
+					SAISIR choice
+					SELON CAS choice FAIRE
+						1:	AFFICHER ""
+							REPETER
+								AFFICHER "Valeur en Centimètres: "
+								SAISIR x	// taille
+								SI x<=0 ALORS
+									AFFICHER "Une taille ne peut être négative!"
+								FINSI
+							JUSQU'A x>=0
+							x ← x/2.54	// calcul de la valeur en Pouces
+							AFFICHER "Valeur en Pouces : " x "po"
+						2:	AFFICHER ""
+							REPETER
+								AFFICHER "Valeur en Pouces : "
+								SAISIR x	// taille
+								SI x<=0 ALORS
+									AFFICHER "Une taille ne peut être négative!"
+								FINSI
+							JUSQU'A x>=0
+							x ← x*2.54	// calcul de la valeur en Centimètres
+							AFFICHER "Valeur en Miles : " x "cm"
+						AUTREMENT :	SI choice<>0 ALORS
+										AFFICHER "Cela n'est pas un choix valide !"
+									FINSI
+					FINSELON
+				FINTANTQUE
+			5 :	TANT QUE choice<>0 FAIRE
+					AFFICHER ""
+					AFFICHER "Conversion Horaire/Secondes"
+					AFFICHER ""
+					AFFICHER "1: Convertir Horaires en Secondes"	
+					AFFICHER "2: Convertir Secondes en Horaires"
+					AFFICHER "0: Retour au menu principal"
+					AFFICHER ""
+					AFFICHER "Choix : "
+					SAISIR choice
+					SELON CAS choice FAIRE
+						1:	AFFICHER ""
+							AFFICHER "Pour rappel : Un horaire est de la forme HHMMSS"
+							AFFICHER "Ainsi, il est interdit d'entrer des valeurs négatives ou supérieures à 59 pour les secondes et minutes ou à 23 pour les heures !"
+							AFFICHER ""	
+							REPETER
+								AFFICHER "Nombres d'heures : "
+								SAISIR hour
+								SI hour>23 ALORS
+									AFFICHER "Le nombre d'heure est trop grand !"
+									AFFICHER ""
+								FINSI
+							JUSQU'A hour<24
+							REPETER
+								AFFICHER "Nombres de minutes : "
+								SAISIR minute
+								SI minute>59 ALORS
+									AFFICHER "Le nombre de minutes est trop grand !"
+									AFFICHER ""
+								FINSI
+							JUSQU'A minute<60
+							REPETER
+								AFFICHER "Nombres de secondes : "
+								SAISIR sec
+								SI sec>59 ALORS
+									AFFICHER "Le nombre de secondes est trop grand !"
+									AFFICHER ""
+								FINSI
+							JUSQU'A sec<60
+							sec ← sec+hour*3600+minute*60
+								AFFICHER ""
+								AFFICHER "Valeur en Secondes : " sec "s"
+						2:	AFFICHER ""
+							AFFICHER "Attention : Le nombre secondes ne peut être supérieur à 86399, sinon il ne s'agit pas d'un horaire"
+							AFFICHER ""
+							REPETER
+								AFFICHER "Valeur en Secondes : "
+								SAISIR sec
+								SI sec>86399 ALORS
+									AFFICHER "Le nombre de secondes est trop grand pour être converti en horaire !"
+									AFFICHER ""
+								FINSI
+							JUSQU'A sec<86400
+							hour ← 0
+							TANT QUE sec>=3600
+								sec ← sec-3600
+								hour ← hour+1
+							FINTANTQUE
+							minute ← 0
+							TANT QUE sec>=60
+								sec ← sec-60
+								minute ← minute+1
+							FINTANTQUE
+							AFFICHER "Valeur horaire : " hour "h" minute "m" sec "s"
+						AUTREMENT :	SI choice<>0 ALORS
+										AFFICHER "Cela n'est pas un choix valide !"
+									FINSI
+					FINSELON
+				FINTANTQUE
+			AUTREMENT : AFFICHER "Cela n'est pas un choix valide !"
+		FINSELON
+	FINTANTQUE
+FIN
