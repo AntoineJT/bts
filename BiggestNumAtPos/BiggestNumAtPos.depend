@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1543230112 source:e:\codeblocksprog_sio1\biggestnumatpos\main.c
-	<stdio.h>
-	<stdlib.h>
-	<windows.h>
-	<limits.h>
-

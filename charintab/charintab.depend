@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1544785136 source:e:\codeblocksprog_sio1\charintab\main.c
-	<stdio.h>
-	<stdlib.h>
-	<windows.h>
-	<string.h>
-

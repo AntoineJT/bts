@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1544177296 source:e:\codeblocksprog_sio1\reversename20char\main.c
-	<stdio.h>
-	<stdlib.h>
-	<windows.h>
-	<string.h>
-
