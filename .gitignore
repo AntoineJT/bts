@@ -8,5 +8,5 @@ obj/
 
 # Binaries
 *.exe
-*.obj
+*.o
 *.dll
